@@ -1,5 +1,6 @@
 package application;
 
+import javax.lang.model.element.NestingKind;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -44,6 +45,16 @@ public class Program {
             for (String key : urna.keySet()) {
                 System.out.println(key + ": " + urna.get(key));
             }
+            System.out.println();
+            int maiorValor = Integer.MIN_VALUE;
+            String chave = "";
+            for(Map.Entry<String,Integer> entry : urna.entrySet()){
+                if (entry.getValue() > maiorValor ){
+                    maiorValor = entry.getValue();
+                    chave = entry.getKey();
+                }
+            }
+            System.out.print("Vencedor da Eleição: \n" + chave + ": " + maiorValor + " Votos");
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
