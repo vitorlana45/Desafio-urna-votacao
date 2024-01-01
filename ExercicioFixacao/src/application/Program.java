@@ -1,6 +1,4 @@
 package application;
-
-import javax.lang.model.element.NestingKind;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
